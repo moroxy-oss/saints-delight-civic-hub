@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Saints Delight Civic Hub</title>
+<meta name="description" content="A neighborhood civic information hub for Saints Delight residents in Chesapeake, Virginia.">
+<style>
+:root{--ink:#17202b;--navy:#0d1722;--slate:#243241;--stone:#f4f0e8;--paper:#fffdf8;--gold:#d6a94b;--gold2:#f0c76a;--muted:#65707c;--line:#dfe1df;--green:#216a53}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--stone);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+a{color:inherit} .top{background:var(--navy);color:white;position:sticky;top:0;z-index:20;border-bottom:1px solid #31404f}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:18px;padding:13px 18px}
+.brand{font-weight:900;letter-spacing:.04em;white-space:nowrap} .brand span{color:var(--gold2)}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto} nav button{background:transparent;border:0;color:#dbe2e8;padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:700} nav button:hover,nav button.active{background:#243344;color:white}
+.container{max-width:1180px;margin:auto;padding:0 18px}
+.hero{padding:72px 0 48px;background:linear-gradient(135deg,#12202d 0%,#1e2c3a 58%,#2b3945 100%);color:white}
+.kicker,.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.13em;font-weight:900;color:var(--gold2)}
+.hero h1{font-size:clamp(2.4rem,6vw,5rem);line-height:.98;max-width:850px;margin:12px 0 20px}
+.hero p{font-size:1.15rem;max-width:760px;color:#d9e0e5}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-block;text-decoration:none;border:1px solid var(--gold);background:var(--gold);color:#1b2024;padding:11px 16px;border-radius:10px;font-weight:900;cursor:pointer}
+.btn.secondary{background:transparent;color:white;border-color:#667584} .btn.small{padding:8px 11px;font-size:.82rem}
+.section{padding:54px 0} .section h2{font-size:2rem;margin:0 0 8px} .section-intro{color:var(--muted);max-width:760px;margin:0 0 24px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 8px 22px rgba(24,32,40,.05)}
+.card h3{margin:7px 0 8px;font-size:1.12rem} .card p{color:#58636e;margin:0 0 15px}
+.banner{background:#182635;color:white;border-radius:20px;padding:26px;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.banner h3{margin:0 0 5px;font-size:1.35rem} .banner p{margin:0;color:#cbd4db}
+.notice{padding:15px 18px;border-left:4px solid var(--gold);background:#fff8e9;border-radius:8px;margin:20px 0;color:#5b4b2d}
+.search{width:100%;padding:14px 15px;border:1px solid var(--line);border-radius:12px;font-size:1rem;background:white;margin-bottom:18px}
+.view{display:none} .view.active{display:block}
+.list{padding-left:20px} .list li{margin:7px 0} .list a{color:#1f536f;text-decoration:underline;overflow-wrap:anywhere}
+.timeline{display:grid;grid-template-columns:120px 1fr;gap:16px;border-top:1px solid var(--line);padding:16px 0} .year{font-weight:900;color:#80621f}
+footer{background:var(--navy);color:#bfc9d1;padding:30px 0;margin-top:20px} footer a{color:#fff}
+@media(max-width:850px){.grid{grid-template-columns:1fr 1fr} nav{display:none} .nav{justify-content:space-between}}
+@media(max-width:560px){.grid{grid-template-columns:1fr} .hero{padding:50px 0 36px} .banner{display:block} .actions .btn{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+<header class="top">
+<div class="nav">
+  <div class="brand">SAINTS <span>DELIGHT</span> CIVIC HUB</div>
+  <nav id="nav">
+    <button class="active" data-view="home">Home</button>
+    <button data-view="represent">Represent Us</button>
+    <button data-view="elections">Elections</button>
+    <button data-view="government">Government</button>
+    <button data-view="help">Get Help</button>
+    <button data-view="calendar">Calendar</button>
+    <button data-view="history">Our History</button>
+    <button data-view="sources">Sources</button>
+  </nav>
+</div>
+</header>
+
+<main>
+<section id="home" class="view active">
+  <div class="hero">
+    <div class="container">
+      <div class="kicker">Neighborhood civic intelligence</div>
+      <h1>Know your neighborhood. Know your government. Use your voice.</h1>
+      <p>Saints Delight Civic Hub brings representation, elections, government services, meetings, history and trusted civic sources into one place for residents of Saints Delight in Chesapeake, Virginia.</p>
+      <div class="actions">
+        <button class="btn" data-view="represent">Who represents me?</button>
+        <button class="btn secondary" data-view="elections">What's on the ballot?</button>
+        <a class="btn secondary" href="https://vote.elections.virginia.gov/VoterInformation/Lookup/polling" target="_blank" rel="noopener">Find my polling place ↗</a>
+      </div>
+    </div>
+  </div>
+  <div class="section container">
+    <div class="notice"><strong>Neighborhood scope:</strong> Dordon Street and Columbus Avenue, Saints Delight, Chesapeake, VA 23321. Source project data was preserved and the site is designed as a simple public website with no login required.</div>
+    <div class="grid">
+      <article class="card">
+      <div class="eyebrow">November 3, 2026</div>
+      <h3>2026 General &amp; Local Election</h3>
+      <p>Early voting begins September 18. Registration deadline October 13. Mail-in application deadline October 23.</p>
+      <a class="btn small" href="https://www.elections.virginia.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+      <article class="card">
+      <div class="eyebrow">Precinct 0035</div>
+      <h3>Polling Place</h3>
+      <p>Park View Christian Church, 3200 Western Branch Blvd, Chesapeake, VA 23321.</p>
+      <a class="btn small" href="https://vote.elections.virginia.gov/VoterInformation/Lookup/polling" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+      <article class="card">
+      <div class="eyebrow">One-stop access</div>
+      <h3>City Services</h3>
+      <p>Police, fire, trash, bulk pickup, utilities, stormwater and animal services.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+    </div>
+  </div>
+</section>
+
+<section id="represent" class="view section">
+  <div class="container">
+    <h2>Represent Us</h2><p class="section-intro">Government representation and official sources preserved from the original Saints Delight Civic Hub.</p>
+    <div class="grid"><article class="card">
+      <div class="eyebrow">U.S. Senator · Virginia</div>
+      <h3>Mark R. Warner</h3>
+      <p>Official government contact and representation information.</p>
+      <a class="btn small" href="https://www.warner.senate.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">U.S. Senator · Virginia</div>
+      <h3>Tim Kaine</h3>
+      <p>Official government contact and representation information.</p>
+      <a class="btn small" href="https://www.kaine.senate.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">U.S. Representative · VA-03</div>
+      <h3>Robert C. &quot;Bobby&quot; Scott</h3>
+      <p>Official government contact and representation information.</p>
+      <a class="btn small" href="https://bobbyscott.house.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Governor of Virginia · Virginia</div>
+      <h3>Abigail Spanberger</h3>
+      <p>Official government contact and representation information.</p>
+      <a class="btn small" href="https://www.governor.virginia.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Lieutenant Governor · Virginia</div>
+      <h3>Ghazala Hashmi</h3>
+      <p>Official government contact and representation information.</p>
+      <a class="btn small" href="https://ltgov.virginia.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Attorney General · Virginia</div>
+      <h3>Jay Jones</h3>
+      <p>Official government contact and representation information.</p>
+      <a class="btn small" href="https://www.oag.state.va.us/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">State Senator · SD-18</div>
+      <h3>L. Louise Lucas</h3>
+      <p>Official government contact and representation information.</p>
+      <a class="btn small" href="https://apps.senate.virginia.gov/Senator/memberpage.php?id=S19" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Delegate · HD-89</div>
+      <h3>Karen Robins Carnegie</h3>
+      <p>Official government contact and representation information.</p>
+      <a class="btn small" href="https://house.vga.virginia.gov/members/H0387" target="_blank" rel="noopener">Open source ↗</a>
+    </article></div>
+  </div>
+</section>
+
+<section id="elections" class="view section">
+  <div class="container">
+    <h2>Elections</h2>
+    <p class="section-intro">The source project identifies the November 3, 2026 Virginia General & Local Election as the next major election for this neighborhood.</p>
+    <div class="banner">
+      <div><h3>November 3, 2026</h3><p>Early voting: Sep 18–Oct 31 · Registration deadline: Oct 13 · Polls: 6:00 AM–7:00 PM</p></div>
+      <a class="btn" href="https://www.elections.virginia.gov/" target="_blank" rel="noopener">Official election site ↗</a>
+    </div>
+    <h2 style="margin-top:42px">Candidates & Ballot References</h2>
+    <p class="section-intro">Candidate links are provided as reference sources. This hub does not endorse candidates.</p>
+    <div class="grid"><article class="card">
+      <div class="eyebrow">U.S. House • VA-03</div>
+      <h3>Robert C. “Bobby” Scott</h3>
+      <p>Democratic Party</p>
+      <a class="btn small" href="https://bobbyscottforcongress.com/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">U.S. House • VA-03</div>
+      <h3>Edwin Rivera</h3>
+      <p>Republican Party</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/edwin-rivera/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake City Council</div>
+      <h3>Anthony Marcell Brown</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/anthony-brown-295325/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake City Council</div>
+      <h3>Nichelle Buffalow</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/nichelle-buffalow/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake City Council</div>
+      <h3>Jeff Bunn</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/jeff-bunn/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake City Council</div>
+      <h3>Gayle M. Gilmore</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/gayle-gilmore/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake City Council</div>
+      <h3>Amanda Newins</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/amanda-newins/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake City Council</div>
+      <h3>Ella Ward</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/ella-ward/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake School Board</div>
+      <h3>Andrea G. Bolden</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/andrea-bolden/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake School Board</div>
+      <h3>Michael Joseph Cassidy</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/michael-cassidy/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake School Board</div>
+      <h3>Michael Lamonea</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/michael-lamonea/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake School Board</div>
+      <h3>John McCormick</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/john-mccormick/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Chesapeake School Board</div>
+      <h3>Brittany A. Walker</h3>
+      <p>At-large</p>
+      <a class="btn small" href="https://www.vpap.org/candidates/brittany-walker/" target="_blank" rel="noopener">Open source ↗</a>
+    </article></div>
+  </div>
+</section>
+
+<section id="government" class="view section">
+  <div class="container">
+    <h2>Government & Civic Resources</h2>
+    <p class="section-intro">Direct links to city, state and federal civic resources.</p>
+    <div class="grid"><article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Virginia Elections</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.elections.virginia.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Virginia Voter Information</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://vote.elections.virginia.gov/VoterInformation" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Polling Place Lookup</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://vote.elections.virginia.gov/VoterInformation/Lookup/polling" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Virginia General Assembly</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://virginiageneralassembly.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Who Represents Me</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://whosmy.virginiageneralassembly.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>City of Chesapeake</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Chesapeake Elections</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/elections" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Chesapeake City Council</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/1893/City-Council-Members" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Chesapeake Public Schools</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://cpschools.com/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>School Board</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://cpschools.com/page/school-board" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Chesapeake Police</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/police" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Chesapeake Fire</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/fire" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Trash Collection</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/trash" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Bulk Pickup</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/bulk" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Public Utilities</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/publicutilities" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Stormwater</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/stormwater" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Animal Services</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/animalservices" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>City Meetings</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/Agenda" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Watch Meetings</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/165/Watch-Meetings-Live" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Congress</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.congress.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>FEC</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.fec.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Virginia History</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://virginiahistory.org/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">Civic resource</div>
+      <h3>Virginia DHR</h3>
+      <p>Official or reference resource preserved from the source project.</p>
+      <a class="btn small" href="https://www.dhr.virginia.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article></div>
+  </div>
+</section>
+
+<section id="help" class="view section">
+  <div class="container">
+    <h2>Get Help</h2>
+    <p class="section-intro">Common city and neighborhood services.</p>
+    <div class="grid"><article class="card">
+      <div class="eyebrow">911</div>
+      <h3>Emergency Services</h3>
+      <p>Immediate police, fire, or EMS response.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">757-382-6161</div>
+      <h3>Chesapeake Police • Western Branch</h3>
+      <p>Non-emergency police response and neighborhood services.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/police" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">757-382-6566</div>
+      <h3>Chesapeake Fire Department</h3>
+      <p>Fire, rescue, paramedic response and related services.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/fire" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">757-382-2489</div>
+      <h3>Household Trash Collection</h3>
+      <p>Weekly residential trash collection information.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/trash" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">757-382-2489</div>
+      <h3>Bulk Trash &amp; Large Item Pickup</h3>
+      <p>Schedule furniture, appliances and other large-item pickup.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/bulk" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">757-382-6352</div>
+      <h3>Public Utilities</h3>
+      <p>Water, wastewater and utility information.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/publicutilities" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">757-382-6233</div>
+      <h3>Stormwater</h3>
+      <p>Drainage, flooding and stormwater resources.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/stormwater" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+<article class="card">
+      <div class="eyebrow">757-382-8080</div>
+      <h3>Animal Services</h3>
+      <p>Animal control, lost pets and related services.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/animalservices" target="_blank" rel="noopener">Open source ↗</a>
+    </article></div>
+  </div>
+</section>
+
+<section id="calendar" class="view section">
+  <div class="container">
+    <h2>Calendar</h2>
+    <p class="section-intro">Key dates and civic meeting resources from the source project.</p>
+    <div class="timeline"><div class="year">SEP 18</div><div><strong>Early voting begins</strong><br><a href="https://www.elections.virginia.gov/" target="_blank" rel="noopener">Virginia Department of Elections ↗</a></div></div>
+    <div class="timeline"><div class="year">OCT 13</div><div><strong>Voter registration deadline</strong><br><a href="https://vote.elections.virginia.gov/VoterInformation" target="_blank" rel="noopener">Virginia voter information ↗</a></div></div>
+    <div class="timeline"><div class="year">OCT 23</div><div><strong>Mail-in application deadline</strong><br><a href="https://www.elections.virginia.gov/" target="_blank" rel="noopener">Election deadlines ↗</a></div></div>
+    <div class="timeline"><div class="year">NOV 3</div><div><strong>Election Day</strong><br><a href="https://vote.elections.virginia.gov/VoterInformation/Lookup/polling" target="_blank" rel="noopener">Polling place lookup ↗</a></div></div>
+    <div class="actions">
+      <a class="btn" href="https://www.cityofchesapeake.net/Agenda" target="_blank" rel="noopener">Chesapeake agendas ↗</a>
+      <a class="btn secondary" href="https://www.cityofchesapeake.net/165/Watch-Meetings-Live" target="_blank" rel="noopener">Watch meetings ↗</a>
+      <a class="btn secondary" href="https://cpschools.com/page/school-board" target="_blank" rel="noopener">School Board ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="history" class="view section">
+  <div class="container">
+    <h2>Our History</h2>
+    <p class="section-intro">The original project includes a neighborhood history section and historical election references. This simple public version keeps those research paths accessible.</p>
+    <div class="grid">
+      <article class="card">
+      <div class="eyebrow">Research source</div>
+      <h3>Virginia History</h3>
+      <p>Explore Virginia historical resources and primary-source material.</p>
+      <a class="btn small" href="https://virginiahistory.org/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+      <article class="card">
+      <div class="eyebrow">Research source</div>
+      <h3>Virginia Department of Historic Resources</h3>
+      <p>Historic places, preservation and statewide resources.</p>
+      <a class="btn small" href="https://www.dhr.virginia.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+      <article class="card">
+      <div class="eyebrow">Research source</div>
+      <h3>Historical Election Results</h3>
+      <p>Virginia election history and archived results.</p>
+      <a class="btn small" href="https://historical.elections.virginia.gov/" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+      <article class="card">
+      <div class="eyebrow">Local resource</div>
+      <h3>Chesapeake Public Library</h3>
+      <p>Local library and community information.</p>
+      <a class="btn small" href="https://www.cityofchesapeake.net/library" target="_blank" rel="noopener">Open source ↗</a>
+    </article>
+    </div>
+  </div>
+</section>
+
+<section id="sources" class="view section">
+  <div class="container">
+    <h2>Sources & All Links</h2>
+    <p class="section-intro">Every concrete external URL found in the supplied AI Studio project is preserved below. This makes the static version easy to audit and share.</p>
+    <input class="search" id="sourceSearch" placeholder="Search sources, agencies, candidates or URLs…">
+    <ul class="list" id="sourceList"><li><a href="https://vote.elections.virginia.gov/" target="_blank" rel="noopener">https://vote.elections.virginia.gov/</a></li>
+<li><a href="https://vote.elections.virginia.gov/VoterInformation/Lookup/polling" target="_blank" rel="noopener">https://vote.elections.virginia.gov/VoterInformation/Lookup/polling</a></li>
+<li><a href="https://whosmy.virginiageneralassembly.gov/" target="_blank" rel="noopener">https://whosmy.virginiageneralassembly.gov/</a></li>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mark_Warner_116th_official_portrait.jpg/440px-Mark_Warner_116th_official_portrait.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mark_Warner_116th_official_portrait.jpg/440px-Mark_Warner_116th_official_portrait.jpg</a></li>
+<li><a href="https://www.warner.senate.gov/" target="_blank" rel="noopener">https://www.warner.senate.gov/</a></li>
+<li><a href="https://www.senate.gov/" target="_blank" rel="noopener">https://www.senate.gov/</a></li>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Tim_Kaine_official_116th_portrait.jpg/440px-Tim_Kaine_official_116th_portrait.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Tim_Kaine_official_116th_portrait.jpg/440px-Tim_Kaine_official_116th_portrait.jpg</a></li>
+<li><a href="https://www.kaine.senate.gov/" target="_blank" rel="noopener">https://www.kaine.senate.gov/</a></li>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Bobby_Scott_118th_official_portrait.jpg/440px-Bobby_Scott_118th_official_portrait.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Bobby_Scott_118th_official_portrait.jpg/440px-Bobby_Scott_118th_official_portrait.jpg</a></li>
+<li><a href="https://bobbyscott.house.gov/" target="_blank" rel="noopener">https://bobbyscott.house.gov/</a></li>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Abigail_Spanberger_official_portrait.jpg/440px-Abigail_Spanberger_official_portrait.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Abigail_Spanberger_official_portrait.jpg/440px-Abigail_Spanberger_official_portrait.jpg</a></li>
+<li><a href="https://www.governor.virginia.gov/" target="_blank" rel="noopener">https://www.governor.virginia.gov/</a></li>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Ghazala_Hashmi_official_portrait.jpg/440px-Ghazala_Hashmi_official_portrait.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Ghazala_Hashmi_official_portrait.jpg/440px-Ghazala_Hashmi_official_portrait.jpg</a></li>
+<li><a href="https://ltgov.virginia.gov/" target="_blank" rel="noopener">https://ltgov.virginia.gov/</a></li>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Jay_Jones_official_portrait.jpg/440px-Jay_Jones_official_portrait.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Jay_Jones_official_portrait.jpg/440px-Jay_Jones_official_portrait.jpg</a></li>
+<li><a href="https://www.oag.state.va.us/" target="_blank" rel="noopener">https://www.oag.state.va.us/</a></li>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/L._Louise_Lucas.jpg/440px-L._Louise_Lucas.jpg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/L._Louise_Lucas.jpg/440px-L._Louise_Lucas.jpg</a></li>
+<li><a href="https://apps.senate.virginia.gov/Senator/memberpage.php?id=S19" target="_blank" rel="noopener">https://apps.senate.virginia.gov/Senator/memberpage.php?id=S19</a></li>
+<li><a href="https://carnegiefordelegate.com/wp-content/uploads/2023/05/kacey-headshot.jpg" target="_blank" rel="noopener">https://carnegiefordelegate.com/wp-content/uploads/2023/05/kacey-headshot.jpg</a></li>
+<li><a href="https://house.vga.virginia.gov/members/H0387" target="_blank" rel="noopener">https://house.vga.virginia.gov/members/H0387</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4223" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4223</a></li>
+<li><a href="https://www.cityofchesapeake.net/1893/City-Council-Members" target="_blank" rel="noopener">https://www.cityofchesapeake.net/1893/City-Council-Members</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4224" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4224</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4226" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4226</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4227" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4227</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4222" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4222</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4225" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4225</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4228" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4228</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4229" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4229</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4230" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4230</a></li>
+<li><a href="https://www.cpschools.com/page/school-board" target="_blank" rel="noopener">https://www.cpschools.com/page/school-board</a></li>
+<li><a href="https://chesapeakesheriff.com/" target="_blank" rel="noopener">https://chesapeakesheriff.com/</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4221" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4221</a></li>
+<li><a href="https://www.cityofchesapeake.net/1237/Commonwealths-Attorney" target="_blank" rel="noopener">https://www.cityofchesapeake.net/1237/Commonwealths-Attorney</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4220" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4220</a></li>
+<li><a href="https://www.cityofchesapeake.net/969/Treasurers-Office" target="_blank" rel="noopener">https://www.cityofchesapeake.net/969/Treasurers-Office</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4219" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4219</a></li>
+<li><a href="https://www.cityofchesapeake.net/207/Commissioner-of-the-Revenue" target="_blank" rel="noopener">https://www.cityofchesapeake.net/207/Commissioner-of-the-Revenue</a></li>
+<li><a href="https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4218" target="_blank" rel="noopener">https://www.cityofchesapeake.net/ImageRepository/Document?documentID=4218</a></li>
+<li><a href="https://www.cityofchesapeake.net/1126/Circuit-Court-Clerk" target="_blank" rel="noopener">https://www.cityofchesapeake.net/1126/Circuit-Court-Clerk</a></li>
+<li><a href="https://www.cityofchesapeake.net/948/Real-Estate-Assessors-Office" target="_blank" rel="noopener">https://www.cityofchesapeake.net/948/Real-Estate-Assessors-Office</a></li>
+<li><a href="https://bobbyscottforcongress.com/" target="_blank" rel="noopener">https://bobbyscottforcongress.com/</a></li>
+<li><a href="https://www.vpap.org/candidates/edwin-rivera/" target="_blank" rel="noopener">https://www.vpap.org/candidates/edwin-rivera/</a></li>
+<li><a href="https://www.vpap.org/candidates/anthony-brown-295325/" target="_blank" rel="noopener">https://www.vpap.org/candidates/anthony-brown-295325/</a></li>
+<li><a href="https://www.vpap.org/candidates/nichelle-buffalow/" target="_blank" rel="noopener">https://www.vpap.org/candidates/nichelle-buffalow/</a></li>
+<li><a href="https://www.vpap.org/candidates/jeff-bunn/" target="_blank" rel="noopener">https://www.vpap.org/candidates/jeff-bunn/</a></li>
+<li><a href="https://www.vpap.org/candidates/gayle-gilmore/" target="_blank" rel="noopener">https://www.vpap.org/candidates/gayle-gilmore/</a></li>
+<li><a href="https://www.vpap.org/candidates/amanda-newins/" target="_blank" rel="noopener">https://www.vpap.org/candidates/amanda-newins/</a></li>
+<li><a href="https://www.vpap.org/candidates/ella-ward/" target="_blank" rel="noopener">https://www.vpap.org/candidates/ella-ward/</a></li>
+<li><a href="https://www.vpap.org/candidates/andrea-bolden/" target="_blank" rel="noopener">https://www.vpap.org/candidates/andrea-bolden/</a></li>
+<li><a href="https://www.vpap.org/candidates/michael-cassidy/" target="_blank" rel="noopener">https://www.vpap.org/candidates/michael-cassidy/</a></li>
+<li><a href="https://www.vpap.org/candidates/michael-lamonea/" target="_blank" rel="noopener">https://www.vpap.org/candidates/michael-lamonea/</a></li>
+<li><a href="https://www.vpap.org/candidates/john-mccormick/" target="_blank" rel="noopener">https://www.vpap.org/candidates/john-mccormick/</a></li>
+<li><a href="https://www.vpap.org/candidates/brittany-walker/" target="_blank" rel="noopener">https://www.vpap.org/candidates/brittany-walker/</a></li>
+<li><a href="https://www.hamiltonforva.org/" target="_blank" rel="noopener">https://www.hamiltonforva.org/</a></li>
+<li><a href="https://historical.elections.virginia.gov/" target="_blank" rel="noopener">https://historical.elections.virginia.gov/</a></li>
+<li><a href="https://abigailspanberger.com/" target="_blank" rel="noopener">https://abigailspanberger.com/</a></li>
+<li><a href="https://www.elections.virginia.gov/" target="_blank" rel="noopener">https://www.elections.virginia.gov/</a></li>
+<li><a href="https://smithforchesapeake.wordpress.com" target="_blank" rel="noopener">https://smithforchesapeake.wordpress.com</a></li>
+<li><a href="https://www.marcussmithforchesapeake.org/" target="_blank" rel="noopener">https://www.marcussmithforchesapeake.org/</a></li>
+<li><a href="https://www.cityofchesapeake.net/elections" target="_blank" rel="noopener">https://www.cityofchesapeake.net/elections</a></li>
+<li><a href="https://www.sarahtaylorforcouncil.com/" target="_blank" rel="noopener">https://www.sarahtaylorforcouncil.com/</a></li>
+<li><a href="https://cpschools.com/" target="_blank" rel="noopener">https://cpschools.com/</a></li>
+<li><a href="https://www.cityofchesapeake.net/Agenda" target="_blank" rel="noopener">https://www.cityofchesapeake.net/Agenda</a></li>
+<li><a href="https://www.cityofchesapeake.net/165/Watch-Meetings-Live" target="_blank" rel="noopener">https://www.cityofchesapeake.net/165/Watch-Meetings-Live</a></li>
+<li><a href="https://www.cityofchesapeake.net/383/Planning-Commission" target="_blank" rel="noopener">https://www.cityofchesapeake.net/383/Planning-Commission</a></li>
+<li><a href="https://cpschools.com/school-board/" target="_blank" rel="noopener">https://cpschools.com/school-board/</a></li>
+<li><a href="https://cpschools.com/live-stream" target="_blank" rel="noopener">https://cpschools.com/live-stream</a></li>
+<li><a href="https://www.cityofchesapeake.net/planning" target="_blank" rel="noopener">https://www.cityofchesapeake.net/planning</a></li>
+<li><a href="https://www.cityofchesapeake.net/publicworks" target="_blank" rel="noopener">https://www.cityofchesapeake.net/publicworks</a></li>
+<li><a href="https://www.cityofchesapeake.net/" target="_blank" rel="noopener">https://www.cityofchesapeake.net/</a></li>
+<li><a href="https://www.cityofchesapeake.net/police" target="_blank" rel="noopener">https://www.cityofchesapeake.net/police</a></li>
+<li><a href="https://www.cityofchesapeake.net/fire" target="_blank" rel="noopener">https://www.cityofchesapeake.net/fire</a></li>
+<li><a href="https://www.cityofchesapeake.net/trash" target="_blank" rel="noopener">https://www.cityofchesapeake.net/trash</a></li>
+<li><a href="https://www.cityofchesapeake.net/bulk" target="_blank" rel="noopener">https://www.cityofchesapeake.net/bulk</a></li>
+<li><a href="https://www.cityofchesapeake.net/publicutilities" target="_blank" rel="noopener">https://www.cityofchesapeake.net/publicutilities</a></li>
+<li><a href="https://www.dominionenergy.com/outages/report-a-streetlight-outage" target="_blank" rel="noopener">https://www.dominionenergy.com/outages/report-a-streetlight-outage</a></li>
+<li><a href="https://www.cityofchesapeake.net/stormwater" target="_blank" rel="noopener">https://www.cityofchesapeake.net/stormwater</a></li>
+<li><a href="https://www.cityofchesapeake.net/codeenforcement" target="_blank" rel="noopener">https://www.cityofchesapeake.net/codeenforcement</a></li>
+<li><a href="https://www.cityofchesapeake.net/animalservices" target="_blank" rel="noopener">https://www.cityofchesapeake.net/animalservices</a></li>
+<li><a href="https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+HB120" target="_blank" rel="noopener">https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+HB120</a></li>
+<li><a href="https://www.congress.gov/bill/119th-congress/house-bill/802" target="_blank" rel="noopener">https://www.congress.gov/bill/119th-congress/house-bill/802</a></li>
+<li><a href="https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+SB88" target="_blank" rel="noopener">https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+SB88</a></li>
+<li><a href="https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+HB410" target="_blank" rel="noopener">https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+HB410</a></li>
+<li><a href="https://www.congress.gov/bill/119th-congress/house-bill/902" target="_blank" rel="noopener">https://www.congress.gov/bill/119th-congress/house-bill/902</a></li>
+<li><a href="https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+HB305" target="_blank" rel="noopener">https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+HB305</a></li>
+<li><a href="https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+SB14" target="_blank" rel="noopener">https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+SB14</a></li>
+<li><a href="https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+HB512" target="_blank" rel="noopener">https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+HB512</a></li>
+<li><a href="https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+HB630" target="_blank" rel="noopener">https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+HB630</a></li>
+<li><a href="https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+SB202" target="_blank" rel="noopener">https://lis.virginia.gov/cgi-bin/legp604.exe?261+sum+SB202</a></li>
+<li><a href="https://cpschools.com/school-board/policies" target="_blank" rel="noopener">https://cpschools.com/school-board/policies</a></li>
+<li><a href="https://www.cityofchesapeake.net/library" target="_blank" rel="noopener">https://www.cityofchesapeake.net/library</a></li>
+<li><a href="https://virginiahistory.org/" target="_blank" rel="noopener">https://virginiahistory.org/</a></li>
+<li><a href="https://www.dhr.virginia.gov/" target="_blank" rel="noopener">https://www.dhr.virginia.gov/</a></li>
+<li><a href="https://apps.senate.virginia.gov/" target="_blank" rel="noopener">https://apps.senate.virginia.gov/</a></li>
+<li><a href="https://cpschools.com/page/school-board" target="_blank" rel="noopener">https://cpschools.com/page/school-board</a></li>
+<li><a href="https://www.cityofchesapeake.net/608/Commonwealths-Attorney" target="_blank" rel="noopener">https://www.cityofchesapeake.net/608/Commonwealths-Attorney</a></li>
+<li><a href="https://www.cityofchesapeake.net/668/Treasurer" target="_blank" rel="noopener">https://www.cityofchesapeake.net/668/Treasurer</a></li>
+<li><a href="https://www.cityofchesapeake.net/495/Commissioner-of-the-Revenue" target="_blank" rel="noopener">https://www.cityofchesapeake.net/495/Commissioner-of-the-Revenue</a></li>
+<li><a href="https://www.cityofchesapeake.net/513/Circuit-Court-Clerk" target="_blank" rel="noopener">https://www.cityofchesapeake.net/513/Circuit-Court-Clerk</a></li>
+<li><a href="https://virginiageneralassembly.gov/" target="_blank" rel="noopener">https://virginiageneralassembly.gov/</a></li>
+<li><a href="https://www.fec.gov/" target="_blank" rel="noopener">https://www.fec.gov/</a></li>
+<li><a href="https://www.congress.gov/" target="_blank" rel="noopener">https://www.congress.gov/</a></li>
+<li><a href="https://www.cityofchesapeake.net/agendas" target="_blank" rel="noopener">https://www.cityofchesapeake.net/agendas</a></li>
+<li><a href="https://whosmy.vga.virginia.gov/" target="_blank" rel="noopener">https://whosmy.vga.virginia.gov/</a></li>
+<li><a href="https://vote.elections.virginia.gov/VoterInformation" target="_blank" rel="noopener">https://vote.elections.virginia.gov/VoterInformation</a></li>
+<li><a href="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" target="_blank" rel="noopener">https://ai.google.dev/static/site-assets/images/share-ais-513315318.png</a></li>
+<li><a href="https://ai.studio/apps/5b52a118-2bf2-49c2-b41e-7c578708de23" target="_blank" rel="noopener">https://ai.studio/apps/5b52a118-2bf2-49c2-b41e-7c578708de23</a></li></ul>
+  </div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+  <strong>Saints Delight Civic Hub</strong>
+  <p>A nonpartisan neighborhood information resource. Verify election, district and service information with the official source before acting.</p>
+  <p><a href="https://www.elections.virginia.gov/" target="_blank" rel="noopener">Virginia Elections</a> · <a href="https://www.cityofchesapeake.net/" target="_blank" rel="noopener">City of Chesapeake</a> · <a href="https://cpschools.com/page/school-board" target="_blank" rel="noopener">Chesapeake Public Schools</a></p>
+</div>
+</footer>
+
+<script>
+const views=[...document.querySelectorAll('.view')];
+const buttons=[...document.querySelectorAll('[data-view]')];
+function showView(id){
+  views.forEach(v=>v.classList.toggle('active',v.id===id));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+buttons.forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
+document.getElementById('sourceSearch').addEventListener('input',e=>{
+  const q=e.target.value.toLowerCase();
+  document.querySelectorAll('#sourceList li').forEach(li=>li.style.display=li.textContent.toLowerCase().includes(q)?'':'none');
+});
+</script>
+</body>
+</html>
